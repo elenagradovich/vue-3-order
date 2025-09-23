@@ -24,4 +24,11 @@ export default defineConfig({
       },
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/assets/scss/ds-system/ds" as *;'
+      }
+    }
+  }
 });

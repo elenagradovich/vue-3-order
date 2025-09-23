@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: postgres
+    image: postgres:latest
     environment:
       POSTGRES_HOST_AUTH_METHOD: 'trust'
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
@@ -14,6 +14,7 @@ services:
   backend:
     build: backend
     command: npm start
+    platform: linux/amd64
     volumes:
       - ./backend:/backend
       - /backend/node_modules

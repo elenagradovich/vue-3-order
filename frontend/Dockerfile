@@ -1,11 +1,14 @@
 FROM node:20-slim
 
+ENV ROLLUP_SKIP_NODEJS_NATIVE=true
+
 WORKDIR /frontend
 
-COPY package.json package-lock.json ./
+COPY package*.json ./
 
 RUN npm ci
 
-COPY . /frontend
+COPY . .
 
+EXPOSE 8080
 CMD ["npm", "run", "dev"]
