@@ -12,7 +12,7 @@
 </template>
 
 <style lang="scss">
-@import "@/assets/scss/app.scss";
+@use "@/assets/scss/app.scss" as *;
 body {
   justify-content: center;
   align-items: center;
